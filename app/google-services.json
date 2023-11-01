@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "478309698101",
+    "firebase_url": "https://nachos-1593027663905.firebaseio.com",
+    "project_id": "nachos-1593027663905",
+    "storage_bucket": "nachos-1593027663905.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:478309698101:android:84ec5d10303ac6878b3f7c",
+        "android_client_info": {
+          "package_name": "com.mystatus.nachos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "478309698101-8jjq2fn251lbk58d3rbp89v0fmgusjhl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mystatus.nachos",
+            "certificate_hash": "eee12a0770f61882cc14333015eed8582e9ccde1"
+          }
+        },
+        {
+          "client_id": "478309698101-scbbmq7r6rlsqklbhhqblgae7ki04t8k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2TkzVPBta_FlSa6L1pGiDyyMrxKuMXmk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "478309698101-cqa5b03rdv8lf79v77sr9tg6s68j98o8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,328 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+
+    android:background="@color/black"
+    tools:context=".ui.fragments.HomeFragment">
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_popular_f"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+        <!--Filter button starts-->
+        <RelativeLayout
+            android:id="@+id/relative_layout_movies_fragement_filtres_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/filter_button_selector"
+            android:clickable="true"
+            android:elevation="10dp"
+            android:layout_centerVertical="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:nextFocusLeft="@id/recycler_view_series_fragment"
+            android:nextFocusRight="@id/recycler_view_series_fragment"
+            android:nextFocusUp="@id/recycler_view_series_fragment"
+            android:nextFocusDown="@id/recycler_view_series_fragment"
+            android:paddingTop="60dp"
+            android:paddingBottom="60dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:visibility="visible">
+
+            <com.mystatus.nachos.Utils.VerticalTextView
+                android:layout_width="wrap_content"
+                android:layout_height="84dp"
+                android:layout_gravity="center"
+                android:gravity="right|center_horizontal"
+                android:paddingLeft="20dp"
+                android:paddingTop="5dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="5dp"
+                android:text="פילטרים"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:direction="downtoup"
+                app:textColor="@android:color/white"
+                app:textSize="24sp" />
+        </RelativeLayout>
+        <!--Filter button ends-->
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh_layout_movies_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <LinearLayout
+                android:id="@+id/linearRecyclerParent"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/linear_layout_load_movies_fragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible">
+
+                    <include layout="@layout/place_holder_page_grid_poster" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_layout_page_error_movies_fragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone">
+
+                    <include layout="@layout/page_error" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/image_view_empty_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="100dp"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_empty" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_movies_fragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:descendantFocusability="afterDescendants"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:visibility="gone"
+                    app:interceptTopBottomScroll="true"
+                    app:selectorVelocity="0"
+                    app:smoothScrolling="true" />
+
+
+            </LinearLayout>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative_layout_movies_fragement_filtres_button1"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/bg_filter_red"
+            android:clickable="true"
+            android:elevation="10dp"
+            android:focusable="true"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="5dp"
+                android:tint="@color/white"
+                app:srcCompat="@drawable/ic_tune" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="35dp"
+                android:gravity="center"
+                android:text="Filtres"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navViewFilters"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:alpha="255"
+            android:layout_gravity="start"
+            android:background="@drawable/bg_gradiant_menu"
+            android:fitsSystemWindows="true"
+            android:focusableInTouchMode="true"
+            android:theme="@style/NavigationView"
+            app:headerLayout="@layout/drawer_filter"
+            android:visibility="gone"
+            app:itemIconTint="@color/white"
+            app:itemTextColor="@color/white">
+
+            <include
+                layout="@layout/drawer_filter"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.google.android.material.navigation.NavigationView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_movies_fragement_filtres_layout"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginRight="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/red"
+            app:cardCornerRadius="25dp">
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="30dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp">
+
+                    <RelativeLayout
+
+                        android:id="@+id/relative_layout_frament_movies_genres"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/border_right_filtres">
+
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:padding="7dp"
+                            android:tint="@color/white"
+                            app:srcCompat="@drawable/ic_tune" />
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/spinner_fragement_movies_genre_list"
+                            style="@style/mySpinnerItemStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="45dp"
+                            android:background="@android:color/transparent"
+                            android:spinnerMode="dropdown" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="5dp"
+                            android:tint="@color/white"
+                            app:srcCompat="@drawable/ic_arrow_down" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:padding="7dp"
+                            android:tint="@color/white"
+                            app:srcCompat="@drawable/ic_sort" />
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/spinner_fragement_movies_orders_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="45dp"
+                            android:background="@android:color/transparent"
+                            android:spinnerMode="dropdown" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="3dp"
+                            android:tint="@color/white"
+                            app:srcCompat="@drawable/ic_arrow_down" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/bg_filtres">
+
+                    <ImageView
+                        android:id="@+id/image_view_movies_fragement_close_filtres"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="7dp"
+                        android:tint="@color/white"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/ic_close" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:id="@+id/relative_layout_load_more_movies_fragment"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="60dp"
+            android:background="@drawable/bg_loading_more"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:indeterminate="true"
+                android:padding="5dp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

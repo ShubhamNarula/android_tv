@@ -1,0 +1,135 @@
+<resources>
+    <string name="app_name">Nachos</string>
+    <string name="publisher_id">pub-3447169368463700</string>
+
+    <string name="facebook_app_id">232288084790576</string>
+    <string name="fb_login_protocol_scheme">fb232288084790576</string>
+
+    <string name="download_foler">Nachos</string>
+    <string name="panel_url">http://admin.adminpanel.esy.es/</string>
+    <string-array name="orders_list">
+        <item>Last Added</item>
+        <item>By Rating</item>
+        <item>By IMDb Rating</item>
+        <item>By Title</item>
+        <item>By Year</item>
+        <item>By Views</item>
+    </string-array>
+
+    <string name="media_route_menu_title">הפעל</string>
+
+    <string name="navigation_drawer_open">פתח את הניווט</string>
+    <string name="navigation_drawer_close">סגור את הניווט</string>
+
+    <string name="action_example">פעולת דוגמא</string>
+
+    <string name="action_settings">הגדרות</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">שלום שבר ריק</string>
+    <string name="try_again">נסה שוב</string>
+    <string name="error_server">בדוק את החיבור שלך לאינטרנט</string>
+    <string name="no_source_available">אין קישור פעיל בסרט הזה</string>
+    <string name="cancel">ביטול</string>
+    <string name="submit">שלח</string>
+    <string name="rating_done">הדירוג שלך בוצע בהצלחה</string>
+    <string name="write_comment">כתוב תגובה</string>
+    <string name="comment_hidden">הסתר</string>
+    <string name="now_time">עכשיו</string>
+    <string name="off">כבה</string>
+    <string name="on">הפעל</string>
+    <string name="loading_subtitles">טוען כתובתיות...</string>
+    <string name="for_you">עבורך</string>
+    <string name="search_about_actors">כאן תוכל לחפש שחקנים</string>
+    <string name="account_disabled">החשבון הושבת צור איתנו קשר</string>
+    <string name="operation_progress">בתהליך , אנא המתן</string>
+    <string name="get_this_movie_here">קבל את הסרט מהקישור למטה:</string>
+    <string name="get_this_tv_show_here">קבל את הסדרה מהקישור למטה:</string>
+
+    <string name="get_this_serie_here">קבל עוד סדרות טלויזיה</string>
+    <string name="get_this_channel_here">קבל את הערוץ בקישור למטה</string>
+
+    <string name="file_has_been_downloaded">הקובץ הורד בהצלחה</string>
+    <string name="Downloaded">הורד בהצלחה</string>
+    <string name="exit">יציאה</string>
+    <string name="policy_privacy">מדיניות פרטיות</string>
+    <string name="action_rate">דרג אפליקציה</string>
+    <string name="action_support"><![CDATA[דווח על באגים & עזרה]]></string>
+    <string name="share_this_app">שתף את נאצוס</string>
+    <string name="my_profile">הפרופיל שלי</string>
+    <string name="Logout">התנתק</string>
+    <string name="login">התחבר / הרשם</string>
+    <string name="subscribe">מנוי פרימיום</string>
+    <string name="later">מאוחר יותר</string>
+    <string name="please_login">התחבר לחשבון קיים</string>
+    <string name="message_logout">התנתקת בהצלחה</string>
+    <string name="hint_name">שם מלא</string>
+    <string name="update_my_profile">עדכן את הפרופיל</string>
+    <string name="error_short_value">ערך זה קצר מאוד אנא הכנס ערך נכון</string>
+    <string name="infos_updated_successfully">המידע עודכן בהצלחה</string>
+    <string name="rate_this_channel">דרג את הערוץ</string>
+    <string name="rate_this_serie_tv">דרג את הסדרה</string>
+    <string name="rate_this_movie">דרג את הסרט</string>
+    <string name="channel_added_fav">הערוץ הוסף לרשימה שלך</string>
+    <string name="channel_removed_fav">הערוץ נמחק מהרשימה שלך</string>
+    <string name="website">אתר אינטרנט</string>
+    <string name="update_now">עדכן עכשיו</string>
+    <string name="skip">דלג</string>
+    <string name="title_notification">אפשר עדכונים</string>
+    <string name="label_notification">קבלת עדכונים</string>
+    <string name="clear_cache">נקה מטמון</string>
+    <string name="label_cache">נקה תמונות שמורות במטמון מקומי. נכון לעכשיו:</string>
+    <string name="contact_us">צור איתנו קשר</string>
+    <string name="version_label">גרסה</string>
+    <string name="enable_subtitles">אפשר כתוביות</string>
+    <string name="hint_email">אימייל</string>
+    <string name="hint_message">ההודעה שלך</string>
+    <string name="send_support">שלח הודעה</string>
+    <string name="message_sended">ההודעה נשלחה בהצלחה</string>
+    <string name="error_mail_valide">הזן בבקשה מייל תקין</string>
+
+    <string name="title_slide_1">ברוכים הבאים לאפליקצית נאצוס</string>
+    <string name="description_slide_1">תודה רבה שהורדת את אפליקצית נאצוס , אנו מזמינים אותך להנות מתוכן איכותי ללא גבולות</string>
+
+    <string name="title_slide_2">יש כאן הכל</string>
+    <string name="description_slide_2">כל התוכן במקום אחד מכל העולם ! סדרות , סרטים ערוצי טלויזיה ועד המון תכנים ייחודיים</string>
+
+    <string name="title_slide_3">השתמש בכתוביות</string>
+    <string name="description_slide_3">צפייה בסרטים שאוהבים עם תוכן מתורגם ברמת מקור </string>
+
+    <string name="title_slide_4">הורדה וצפייה מאוחר יותר</string>
+    <string name="description_slide_4">הורדת הסרטים והסדרות כדי שיתפאשר צפייה מאוחר יותר </string>
+
+    <string name="title_slide_5">צפייה במסך הגדול</string>
+    <string name="description_slide_5">אפליקצית נאצוס מותאמת למסכי טלויזיה חכמים ובשליטה דרך השלט</string>
+
+    <string name="dialog_text_no_ads_title">כבה פרסומות</string>
+    <string name="dialog_text_no_premium_wallpapers_title">תוכן בתשלום</string>
+    <string name="dialog_text_no_premium_wallpapers_description">קבל אין סוף מדבקות</string>
+    <string name="dialog_text_no_ads_description">קבל צפייה בחינם ללא פרסומות</string>
+    <string name="description_subsribte">גם בצפייה בחינם לא יהיו פרסומות שיפריעו לצפייה</string>
+    <string name="download_premium_content">הורדת תוכן פרימיום</string>
+    <string name="play_premium_content">צפייה בתוכן פרימיום</string>
+    <string name="use_content_for_free">עכשיו תוכל לצפות בתוכן פרימיום</string>
+    <string name="AD_MOB_ENABLED_BANNER">true</string>
+    <string name="downloading">מוריד...</string>
+    <string name="title_file_download">מוריד APK</string>
+    <string name="storage_access_required">חייב גישה לאחסון כדי להוריד את הקובץ</string>
+    <string name="storage_permission_denied">בקשה לשימוש באחסון נדחה</string>
+    <string name="ok">בסדר</string>
+
+
+    <string name="enter_your_first_name">First name</string>
+    <string name="enter_your_last_name">Last name</string>
+    <string name="enter_your_mobile_number">Mobile number</string>
+    <string name="re_enter_your_password">Confirm password</string>
+    <string name="enter_your_email_id">Email id</string>
+    <string name="enter_your_password">Password</string>
+    <string name="enter_your_cpassword">Confirm password</string>
+    <string name="login_only">Login</string>
+    <string name="registrer">New Registration</string>
+    <string name="login_now">Already have account?</string>
+
+
+
+</resources>

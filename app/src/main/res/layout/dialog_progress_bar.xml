@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/linear_layout_rate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/color_cursor_white"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:lines="2"
+            android:minLines="2"
+            android:text="...אנחנו מסיימים ממש עוד מעט"
+            android:textAlignment="center"
+            android:textColor="@color/secondary_text"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progressTint="@color/colorAccent"
+            android:fadeScrollbars="false"
+            android:indeterminate="true"
+            android:progress="50"
+            android:secondaryProgressTint="@color/cast_libraries_material_featurehighlight_outer_highlight_default_color" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

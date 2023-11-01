@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.mystatus.nachos">
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+
+    <uses-sdk tools:overrideLibrary="android.support.v17.leanback" />
+
+
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="false" />
+
+    <application
+        android:name="com.mystatus.nachos.MyApplication"
+        android:allowBackup="false"
+        android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|layoutDirection"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Nachos"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <activity
+            android:name=".ui.activities.SplashActivity"
+            android:banner="@mipmap/ic_launcher"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|layoutDirection"
+            android:icon="@mipmap/ic_launcher"
+            android:label="Nachos"
+            android:logo="@mipmap/ic_launcher"
+            android:theme="@style/AppThemeActionDestils">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <service
+            android:name="com.mystatus.nachos.services.DownloadService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name="com.mystatus.nachos.services.ToastService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:launchMode="singleTop"
+            android:name="com.mystatus.nachos.ui.activities.PlayerActivity"
+            android:theme="@style/AppTheme" />
+
+        <meta-data
+            android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME"
+            android:value="${applicationId}.cast.CastOptionsProvider" />
+
+        <service android:name="com.mystatus.nachos.services.NotifFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="com.mystatus.nachos.cast.ExpandedControlsActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.CastVideosDark">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mystatus.nachos.ui.activities.PlayerActivity" />
+        </activity>
+        <activity
+            android:name="com.mystatus.nachos.ui.activities.HomeActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppThemeActionDestils" />
+        <activity
+            android:name="com.mystatus.nachos.ui.activities.IntroActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.mystatus.nachos.ui.activities.MovieActivity"
+            android:exported="true"
+            android:theme="@style/AppThemeActionDestils" />
+        <activity
+            android:name="com.mystatus.nachos.ui.activities.YoutubeActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.mystatus.nachos.ui.activities.ActorsActivity"
+            android:theme="@style/AppThemeNoAction" />
+
+        <activity
+            android:name="com.mystatus.nachos.ui.activities.SignupActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppThemeNoAction" />
+
+        <activity
+            android:name="com.mystatus.nachos.ui.activities.LoginNewActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppThemeNoAction" />
+        <activity
+            android:name="com.mystatus.nachos.ui.activities.ActorActivity"
+            android:theme="@style/AppThemeActionDestils" />
+        <activity
+            android:name="com.mystatus.nachos.ui.activities.LoginActivity"
+            android:theme="@style/Theme.LoginDialog" />
+        <activity
+            android:name="com.mystatus.nachos.ui.activities.GenreActivity"
+            android:theme="@style/AppThemeNoAction" />
+        <activity
+            android:name="com.mystatus.nachos.ui.activities.TopActivity"
+            android:theme="@style/AppThemeNoAction" />
+        <activity
+            android:name="com.mystatus.nachos.ui.activities.MyListActivity"
+            android:theme="@style/AppThemeNoAction" />
+        <activity
+            android:name="com.mystatus.nachos.ui.activities.SerieActivity"
+            android:theme="@style/AppThemeActionDestils" />
+        <activity
+            android:name="com.mystatus.nachos.ui.activities.EditActivity"
+            android:theme="@style/Theme.ProfileDialog" />
+        <activity
+            android:name="com.mystatus.nachos.ui.activities.ChannelActivity"
+            android:theme="@style/AppThemeActionDestils" />
+        <activity
+            android:name="com.mystatus.nachos.ui.activities.CategoryActivity"
+            android:theme="@style/AppThemeNoAction" />
+        <activity
+            android:name="com.mystatus.nachos.ui.activities.SearchActivity"
+            android:theme="@style/AppThemeNoAction" />
+        <activity
+            android:name="com.mystatus.nachos.ui.activities.SettingsActivity"
+            android:theme="@style/AppThemeNoAction" />
+        <activity
+            android:name="com.mystatus.nachos.ui.activities.SupportActivity"
+            android:theme="@style/Theme.ProfileDialog" />
+        <activity
+            android:name="com.mystatus.nachos.ui.activities.PolicyActivity"
+            android:theme="@style/AppThemeNoAction" />
+        <activity
+            android:name="com.mystatus.nachos.ui.activities.EmbedActivity"
+            android:theme="@style/AppTheme"></activity>
+
+        <activity
+            android:name="com.mystatus.nachos.ui.activities.PaymentWebview"
+            android:theme="@style/AppTheme"></activity>
+
+        <activity
+            android:name="com.mystatus.nachos.ui.activities.CancelSubscriptioActivity"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".ui.activities.FragmentActivities.SerieFragmentActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppThemeActionDestils" />
+
+        <activity
+            android:name=".ui.activities.FragmentActivities.MovieFragmentActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppThemeActionDestils" />
+
+        <activity
+            android:name=".ui.activities.FragmentActivities.TvFragmentActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppThemeActionDestils" />
+
+
+    </application>
+
+</manifest>

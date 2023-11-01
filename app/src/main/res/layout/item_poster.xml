@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_poster_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp"
+    android:layout_marginBottom="3dp"
+    android:background="@drawable/item_selector"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:padding="2dp">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/poster_container"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        app:cardBackgroundColor="#000000"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp"
+        app:cardPreventCornerOverlap="true">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/llFooter"
+                android:layout_margin="0dp"
+                app:cardBackgroundColor="#000000"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="0dp"
+                app:cardPreventCornerOverlap="true">
+
+
+                <ImageView
+                    android:id="@+id/image_view_item_poster_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/llFooter"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/poster_placeholder" />
+
+                <TextView
+                    android:id="@+id/badge_quality"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/llFooter"
+                    android:layout_gravity="top|left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="12dp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/bg_background_quality"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:scaleType="fitXY"
+                    android:text="4k"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12dp"
+                    android:visibility="visible" />
+
+
+
+                <TextView
+                    android:id="@+id/badge_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_above="@+id/llFooter"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_gravity="left"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:visibility="visible"
+                    android:background="@drawable/bg_background_black"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="2021" />
+
+
+                <ImageView
+                    android:id="@+id/badge_serie"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp"
+                    android:layout_above="@+id/llFooter"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_gravity="right"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:visibility="visible"
+                    android:src="@drawable/serie_badge" />
+
+                <ImageView
+                    android:id="@+id/badge_movie"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp"
+                    android:layout_above="@+id/llFooter"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_gravity="right"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:visibility="gone"
+                    android:src="@drawable/movie_badge" />
+
+
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:background="#80000000"
+                    android:indeterminateTintMode="src_in"
+                    android:max="100"
+                    android:padding="5dp"
+                    android:progressBackgroundTint="@color/red"
+                    android:rotation="180"
+                    android:theme="@style/ProgressBarStyle"
+                    android:visibility="visible" />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <LinearLayout
+                android:id="@+id/llFooter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/lll"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:singleLine="true"
+                    android:text="שם סדרה"
+                    android:visibility="gone"
+                    android:textColor="@color/white"
+                    android:textSize="13dp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/tvMovieName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:singleLine="true"
+                    android:text="Movie Name"
+                    android:textColor="@color/white"
+                    android:textSize="13dp">
+
+                </TextView>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/lll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="0dp"
+                android:gravity="center"
+                android:padding="2dp">
+
+                <TextView
+                    android:id="@+id/txtPlayas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_background_blue"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/premium"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="12dp" />
+
+
+                <TextView
+                    android:id="@+id/txtImdb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/imgImdb"
+                    android:gravity="center"
+                    android:text="6"
+                    android:textColor="@color/white"
+                    android:textSize="13dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imgImdb"
+                    android:layout_width="30dp"
+                    android:layout_height="14dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/imdb" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relative_layout_item_poster_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/llFooter"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/bg_delete_item"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/image_view_item_poster_delete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="7dp"
+                    android:scaleType="fitCenter"
+                    android:tint="@color/white"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/ic_delete" />
+            </RelativeLayout>
+
+            <!--            <ImageView-->
+            <!--                android:id="@+id/imgPlayas"-->
+            <!--                android:layout_width="24dp"-->
+            <!--                android:layout_height="24dp"-->
+            <!--                android:layout_margin="9dp"-->
+            <!--                android:src="@drawable/ic_crown" />-->
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeFilterParent"
+    android:layout_width="200dp"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:alpha="255"
+    android:clickable="true"
+    android:background="@drawable/bg_gradiant_menu">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/frameClearFilters"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linearOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/red">
+
+                    <ImageView
+                        android:id="@+id/ivDownArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:padding="7dp"
+                        android:tint="@color/white"
+                        app:srcCompat="@drawable/ic_arrow_down" />
+
+                    <TextView
+                        android:id="@+id/tvSelectedOrder"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/ivSort"
+                        android:layout_toEndOf="@+id/ivDownArrow"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:visibility="visible"
+                        tools:text="Selected Sort" />
+
+                    <ImageView
+                        android:id="@+id/ivSort"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:padding="7dp"
+                        android:tint="@color/white"
+                        app:srcCompat="@drawable/ic_sort" />
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvFilterOrder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    android:background="@color/black"
+                    android:scrollbars="none"
+                    tools:itemCount="5"
+                    android:descendantFocusability="afterDescendants"
+                    tools:listitem="@layout/spinner_layout" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearOrder"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/relative_layout_frament_series_genres"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/green">
+
+                    <ImageView
+                        android:id="@+id/ivDownArrowFilter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:padding="7dp"
+                        android:tint="@color/white"
+                        app:srcCompat="@drawable/ic_arrow_down" />
+
+                    <TextView
+                        android:id="@+id/tvSelectedGenre"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/ivTune"
+                        android:layout_toEndOf="@+id/ivDownArrowFilter"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        tools:text="Selected Filter" />
+
+                    <ImageView
+                        android:id="@+id/ivTune"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:padding="7dp"
+                        android:tint="@color/white"
+                        app:srcCompat="@drawable/ic_tune" />
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvFilterGenre"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/black"
+                    android:nestedScrollingEnabled="false"
+                    android:nextFocusDown="@id/rvFilterGenre"
+                    android:overScrollMode="never"
+                    android:scrollbars="none"
+                    tools:itemCount="20"
+                    tools:listitem="@layout/spinner_layout" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/frameClearFilters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:padding="10dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/tvClearFilters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_round_corner_white"
+            android:ellipsize="end"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/str_clear_filters"
+            android:textAllCaps="true"
+            android:textColor="@color/white" />
+
+    </FrameLayout>
+
+</RelativeLayout>

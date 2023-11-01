@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/mtrl_textinput_default_box_stroke_color" android:state_focused="true">
+        <shape android:shape="ring">
+            <solid android:color="@color/white"/>
+            <corners
+                android:radius="50dp">
+            </corners>
+        </shape>
+    </item>
+    <item android:drawable="@color/orange"></item>
+</selector>
